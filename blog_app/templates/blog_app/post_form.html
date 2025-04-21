@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ action }} Post{% endblock %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold mb-6 text-indigo-400">{{ action }} Post</h1>
+    <form method="post" class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="id_title" class="block text-gray-300">Title</label>
+            <input type="text" name="title" id="id_title" value="{{ form.title.value|default_if_none:'' }}" class="w-full p-2 mt-1 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+        <div class="mb-4">
+            <label for="id_content" class="block text-gray-300">Content</label>
+            <textarea name="content" id="id_content" class="w-full p-2 mt-1 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" rows="5" required>{{ form.content.value|default_if_none:'' }}</textarea>
+        </div>
+        <div class="mb-4">
+            <label for="id_is_public" class="flex items-center text-gray-300">
+                <input type="checkbox" name="is_public" id="id_is_public" {% if form.is_public.value %}checked{% endif %} class="mr-2">
+                Make this post public (visible to everyone)
+            </label>
+        </div>
+        <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">{{ action }}</button>
+        <a href="{% url 'personal_blog' %}" class="ml-4 text-indigo-400 hover:text-indigo-300">Cancel</a>
+    </form>
+{% endblock %}

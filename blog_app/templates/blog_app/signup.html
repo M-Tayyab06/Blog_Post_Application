@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold mb-6 text-indigo-400">Sign Up</h1>
+    <form method="post" class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="id_username" class="block text-gray-300">Username</label>
+            <input type="text" name="username" id="id_username" class="w-full p-2 mt-1 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+        <div class="mb-4">
+            <label for="id_password1" class="block text-gray-300">Password</label>
+            <input type="password" name="password1" id="id_password1" class="w-full p-2 mt-1 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+        <div class="mb-4">
+            <label for="id_password2" class="block text-gray-300">Confirm Password</label>
+            <input type="password" name="password2" id="id_password2" class="w-full p-2 mt-1 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+        <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">Sign Up</button>
+    </form>
+{% endblock %}
