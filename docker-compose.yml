@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: django_blog
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - media:/app/media
+      - static:/app/static
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - tailwind  # optional, if you use Tailwind with npm
+
+  tailwind:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["npm", "run", "dev"]  # or "build", depending on your setup
+    profiles:
+      - optional
+
+volumes:
+  media:
+  static:
