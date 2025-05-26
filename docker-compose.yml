@@ -13,18 +13,6 @@ services:
       - "8000:8000"
     environment:
       - PYTHONUNBUFFERED=1
-    depends_on:
-      - tailwind  # optional, if you use Tailwind with npm
-
-  tailwind:
-    image: node:18-alpine
-    working_dir: /app
-    volumes:
-      - .:/app
-    command: ["npm", "run", "dev"]  # or "build", depending on your setup
-    profiles:
-      - optional
-
 volumes:
   media:
   static:
