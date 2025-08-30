@@ -1,3 +1,11 @@
+# Blog Post Application
+
+![License](https://img.shields.io/github/license/M-Tayyab06/Blog_Post_Application?color=blue)
+![Stars](https://img.shields.io/github/stars/M-Tayyab06/Blog_Post_Application?style=social)
+![Issues](https://img.shields.io/github/issues/M-Tayyab06/Blog_Post_Application)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Blog](https://img.shields.io/badge/Blog_App-Node.js-blue?logo=node.js)
+
 # 📝 Django Blogging Application
 
 A **simple, elegant, and responsive** blogging platform built with **Django**, featuring a sleek **dark-themed UI** powered by **Tailwind CSS**. Users can create, view, and delete blog posts with optional image uploads. Includes a powerful Django Admin interface for post management.
